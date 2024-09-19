@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 import Dropdown from "@/Components/Dropdown.vue";
 import DropdownLink from "@/Components/DropdownLink.vue";
@@ -8,6 +8,17 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import { Link } from "@inertiajs/vue3";
 
 const showingNavigationDropdown = ref(false);
+const currentTime = ref("");
+
+const updateTime = () => {
+    const now = new Date();
+    currentTime.value = now.toLocaleString();
+};
+
+onMounted(() => {
+    updateTime();
+    setInterval(updateTime, 1000);
+});
 </script>
 
 <template>
@@ -24,7 +35,7 @@ const showingNavigationDropdown = ref(false);
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
                                     <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200"
+                                        class="block h-12 w-auto fill-current text-gray-800 dark:text-gray-200"
                                     />
                                 </Link>
                             </div>
@@ -45,10 +56,19 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Absensi
                                 </NavLink>
+                                <NavLink
+                                    :href="route('users')"
+                                    :active="route().current('users')"
+                                >
+                                    Users
+                                </NavLink>
                             </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
+                            <h2 class="dark:text-gray-100 text-right ml-auto">
+                                {{ currentTime }}
+                            </h2>
                             <!-- Settings Dropdown -->
                             <div class="ms-3 relative">
                                 <Dropdown align="right" width="48">
