@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import Button from "primevue/button";
+import Button from "@/Components/PrimaryButton.vue";
 import { Head } from "@inertiajs/vue3";
 import { ref, onMounted } from "vue";
 const currentTime = ref("");
@@ -31,12 +31,8 @@ onMounted(() => {
             </div>
         </template>
         <div class="py-6">
-            <Button
-                class="font-semibold text-xl dark:text-gray-200"
-                label="Save"
-                icon="pi pi-check"
-                iconPos="right"
-            />
+            <Button> ABSEN </Button>
+            <Button> PULANG </Button>
         </div>
     </AuthenticatedLayout>
 </template>

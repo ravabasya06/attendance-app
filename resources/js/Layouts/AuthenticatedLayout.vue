@@ -152,7 +152,12 @@ const showingNavigationDropdown = ref(false);
                         >
                             Dashboard
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink> Absensi </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            :href="route('dashboard')"
+                            :active="route().current('dashboard')"
+                        >
+                            Absensi
+                        </ResponsiveNavLink>
                     </div>
 
                     <!-- Responsive Settings Options -->
