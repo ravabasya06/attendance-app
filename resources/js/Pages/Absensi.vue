@@ -20,19 +20,9 @@ onMounted(() => {
     <Head title="Absensi" />
 
     <AuthenticatedLayout>
-        <template #header>
-            <div class="flex">
-                <h2 class="font-semibold text-xl dark:text-gray-200">
-                    Absensi
-                </h2>
-                <h2 class="dark:text-gray-100 text-right ml-auto">
-                    {{ currentTime }}
-                </h2>
-            </div>
-        </template>
-        <div class="py-6">
-            <Button> ABSEN </Button>
-            <Button> PULANG </Button>
+        <div class="py-10 flex flex-col justify-center items-center gap-10">
+            <Button class="dark:text-blue-600 p-2 w-72">ABSEN</Button>
+            <Button class="dark:text-red-600 p-2 w-72">PULANG</Button>
         </div>
     </AuthenticatedLayout>
 </template>
