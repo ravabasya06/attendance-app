@@ -20,17 +20,6 @@ onMounted(() => {
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        <template #header>
-            <div class="flex">
-                <h2 class="font-semibold text-xl dark:text-gray-200">
-                    Dashboard
-                </h2>
-                <h2 class="dark:text-gray-100 text-right ml-auto">
-                    {{ currentTime }}
-                </h2>
-            </div>
-        </template>
-
         <div class="py-6">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div
@@ -43,41 +32,68 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center m-5">
-                <table class="dark:text-gray-100 border text-center">
-                    <thead>
-                        <tr>
-                            <th class="p-12 border">No</th>
-                            <th class="p-12 border">Date & Time</th>
-                            <th class="p-12 border">Absen Masuk</th>
-                            <th class="p-12 border">Absen Pulang</th>
+            <div class="overflow-x-auto scrollbar-table pt-5">
+                <table class="w-full dark:text-white">
+                    <thead
+                        class="uppercase text-sm border-t border-slate-200 dark:border-slate-700"
+                    >
+                        <tr class="dark:bg-slate-900/50 text-left">
+                            <th class="px-2 py-4 text-center"></th>
+                            <th class="px-2 py-4 text-center">#</th>
+                            <th class="px-2 py-4">
+                                <div class="flex justify-between items-center">
+                                    <span>username</span>
+                                </div>
+                            </th>
+                            <th class="px-2 py-4">
+                                <div class="flex justify-between items-center">
+                                    <span>email</span>
+                                </div>
+                            </th>
+                            <th class="px-2 py-4">
+                                <div class="flex justify-between items-center">
+                                    <span>absen masuk</span>
+                                </div>
+                            </th>
+                            <th class="px-2 py-4">
+                                <div class="flex justify-between items-center">
+                                    <span>absen pulang</span>
+                                </div>
+                            </th>
+                            <th class="px-2 py-4 sr-only">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- di bagian absen masuk ganti warna ya, kalau under jam 9 itu biru, diatas jam 9 dan gk masuk jadi merah -->
-                        <tr>
-                            <td class="p-12 border">1</td>
-                            <td class="p-12 border">2024-09-19 09:00</td>
-                            <td class="p-12 border bg-blue-500">08:30</td>
-                            <td class="p-12 border">18:00</td>
-                        </tr>
-                        <tr>
-                            <td class="p-12 border">2</td>
-                            <td class="p-12 border">2024-09-18 09:15</td>
-                            <td class="p-12 border bg-red-600">09:00</td>
-                            <td class="p-12 border">17:45</td>
-                        </tr>
-                        <tr>
-                            <td class="p-12 border">2</td>
-                            <td class="p-12 border">2024-09-17 09:15</td>
-                            <td class="p-12 border bg-red-600">09:00</td>
-                            <td class="p-12 border">17:45</td>
-                        </tr>
-                        <tr>
-                            <td class="p-12 border">2</td>
-                            <td class="p-12 border">2024-09-16 09:15</td>
-                            <td class="p-12 border bg-red-600">09:00</td>
-                            <td class="p-12 border">17:45</td>
+                        <tr
+                            class="border-t border-slate-200 dark:border-slate-700 hover:bg-slate-200/30 hover:dark:bg-slate-900/20"
+                        >
+                            <td
+                                class="whitespace-nowrap py-4 px-2 sm:py-3 text-center"
+                            >
+                                <input
+                                    class="rounded dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-primary dark:text-primary shadow-sm focus:ring-primary/80 dark:focus:ring-primary dark:focus:ring-offset-slate-800 dark:checked:bg-primary dark:checked:border-primary"
+                                    type="checkbox"
+                                />
+                            </td>
+                            <td
+                                class="whitespace-nowrap py-4 px-2 sm:py-3 text-center"
+                            >
+                                1
+                            </td>
+                            <td class="whitespace-nowrap py-4 px-2 sm:py-3">
+                                <span class="flex justify-start items-center">
+                                    username
+                                </span>
+                            </td>
+                            <td class="whitespace-nowrap py-4 px-2 sm:py-3">
+                                email
+                            </td>
+                            <td class="whitespace-nowrap py-4 px-2 sm:py-3">
+                                00:00
+                            </td>
+                            <td class="whitespace-nowrap py-4 px-2 sm:py-3">
+                                00:00
+                            </td>
                         </tr>
                     </tbody>
                 </table>
