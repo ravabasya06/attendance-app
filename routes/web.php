@@ -22,6 +22,10 @@ Route::get('/absensi', function () {
     return Inertia::render('Absensi');
 })->middleware(['auth', 'verified'])->name('absensi');
 
+Route::get('/user', function () {
+    return Inertia::render('Users');
+})->middleware(['auth', 'verified'])->name('users');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
