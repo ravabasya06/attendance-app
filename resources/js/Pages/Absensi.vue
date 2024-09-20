@@ -7,14 +7,13 @@ import { Head } from "@inertiajs/vue3";
     <Head title="Absensi" />
 
     <AuthenticatedLayout>
-        <div class="overflow-x-auto scrollbar-table pt-5">
+        <div class="overflow-x-auto scrollbar-table pt-5 dark:bg-gray-800">
             <table class="w-full dark:text-white">
                 <thead
                     class="uppercase text-sm border-t border-slate-200 dark:border-slate-700"
                 >
                     <tr class="dark:bg-slate-900/50 text-left">
-                        <th class="px-2 py-4 text-center"></th>
-                        <th class="px-2 py-4 text-center">#</th>
+                        <th class="px-2 py-4 text-center">No</th>
                         <th class="px-2 py-4">
                             <div class="flex justify-between items-center">
                                 <span>username</span>
@@ -41,14 +40,6 @@ import { Head } from "@inertiajs/vue3";
                     <tr
                         class="border-t border-slate-200 dark:border-slate-700 hover:bg-slate-200/30 hover:dark:bg-slate-900/20"
                     >
-                        <td
-                            class="whitespace-nowrap py-4 px-2 sm:py-3 text-center"
-                        >
-                            <input
-                                class="rounded dark:bg-slate-900 border-slate-300 dark:border-slate-700 text-primary dark:text-primary shadow-sm focus:ring-primary/80 dark:focus:ring-primary dark:focus:ring-offset-slate-800 dark:checked:bg-primary dark:checked:border-primary"
-                                type="checkbox"
-                            />
-                        </td>
                         <td
                             class="whitespace-nowrap py-4 px-2 sm:py-3 text-center"
                         >
