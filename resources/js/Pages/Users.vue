@@ -1,23 +1,10 @@
 <script setup>
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
-import Button from "@/Components/PrimaryButton.vue";
 import { Head } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
-const currentTime = ref("");
-
-const updateTime = () => {
-    const now = new Date();
-    currentTime.value = now.toLocaleString();
-};
-
-onMounted(() => {
-    updateTime();
-    setInterval(updateTime, 1000);
-});
 </script>
 
 <template>
-    <Head title="users" />
+    <Head title="Users" />
 
     <AuthenticatedLayout>
         <div class="overflow-x-auto scrollbar-table pt-5">
