@@ -17,8 +17,8 @@ return new class extends Migration
             $table->bigInteger('tlp');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('posisi');
-            $table->string('peran');
+            $table->string('posisi'); // Developer
+            $table->string('peran'); // User / Admin
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
