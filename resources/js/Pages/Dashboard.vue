@@ -2,15 +2,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import Button from "@/Components/PrimaryButton.vue";
 import { Head } from "@inertiajs/vue3";
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 const masuk = ref("");
 const pulang = ref("");
-const currentTime = ref("");
-
-const updateTime = () => {
-    const now = new Date();
-    currentTime.value = now.toLocaleString();
-};
 const masukbtn = () => {
     masuk.value = !masuk.value;
 };
@@ -18,10 +12,6 @@ const masukbtn = () => {
 const pulangbtn = () => {
     pulang.value = !pulang.value;
 };
-onMounted(() => {
-    updateTime();
-    setInterval(updateTime, 1000);
-});
 </script>
 
 <template>
