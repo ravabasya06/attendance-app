@@ -62,6 +62,13 @@ onMounted(() => {
                                 >
                                     Users
                                 </NavLink>
+
+                                <NavLink
+                                    :href="route('jam')"
+                                    :active="route().current('jam')"
+                                >
+                                    Jam Masuk
+                                </NavLink>
                             </div>
                         </div>
 
